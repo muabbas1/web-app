@@ -1,3 +1,71 @@
-body{
-    background-color: aquamarine;
-}
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .wheel {
+    width: 300px;
+    height: 300px;
+    background-color: #ffd700;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+  .inner-wheel {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: transform 3s ease;
+  }
+  
+  .wheel-item {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+  
+  /* Calculate width and height based on the number of items */
+  .wheel-item:nth-child(1) {
+    width: calc(100% / var(--item-count));
+    height: calc(100% / var(--item-count));
+    transform: rotate(calc(360deg / var(--item-count) * 0));
+  }
+  .wheel-item:nth-child(2) {
+    width: calc(100% / var(--item-count));
+    height: calc(100% / var(--item-count));
+    transform: rotate(calc(360deg / var(--item-count) * 1));
+  }
+  /* Add similar styles for more items if needed */
+  
+
+  .pointer {
+    position: absolute;
+    top: 0px; /* Adjust top position as needed */
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 30px solid red; /* Change color and size as needed */
+    transform: translateX(-50%); /* Center horizontally */
+  }
