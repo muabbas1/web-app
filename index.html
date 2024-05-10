@@ -8,7 +8,7 @@
        <meta charset="utf-8">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-       <title>Spin The Wheel!</title>
+       <title>Flip The Coin!</title>
        <meta name="description" content="">
        <meta name="viewport" content="width=device-width, initial-scale=1">
        <link rel="stylesheet" href="style.css">
@@ -20,19 +20,16 @@
        <meta name="apple-mobile-web-app-status-bar-style" content="black">
     </head>
     <body>
-        <div class="container">
-          <div class="wheel">
-            <div class="inner-wheel">
-              <!-- Add wheel items dynamically here -->
-            </div>
-            <div class="pointer"></div> <!-- Pointer element -->
-          </div>
-          <button id="spin-btn">Spin</button>
-          <form id="add-item-form">
-            <input type="text" id="new-item" placeholder="Enter new item">
-            <button type="submit">Add</button>
-          </form>
+      <div class='container'>
+        <h2>Flip the coin in order to make a decision about anything!</h2>
+        <div id="coin" class=''>
+          <div id="heads" class="heads"></div>
+          <div id="tails" class="tails"></div>
         </div>
+        <button id="flip">Flip the coin</button>
+        <p>Heads: <span id="headsCount">0</span> Tails: <span id="tailsCount">0</span></p>
+        <p><span id="status"></span></p>
+      </div>
         <script src="scripts.js"></script>
     </body>
 </html>
